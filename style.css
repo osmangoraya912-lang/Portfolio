@@ -1,17 +1,17 @@
 /* ========== GOOGLE FONTS ========== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ========== CSS VARIABLES ========== */
+/* ========== CSS VARIABLES — LIGHT CREAM + GLASSY ========== */
 :root {
-    --bg-primary: #0f0f0f;
-    --bg-secondary: #1a1a1a;
-    --bg-card: #252525;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --accent: #6c63ff;
-    --accent-hover: #5a52d5;
-    --border: #333333;
-    --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --bg-primary: #FFF8EC;
+    --bg-secondary: #FBEED3;
+    --bg-card: rgba(255, 255, 255, 0.55);
+    --text-primary: #2B2620;
+    --text-secondary: #6E6355;
+    --accent: #C05621;
+    --accent-hover: #9C4218;
+    --border: rgba(255, 255, 255, 0.7);
+    --shadow: 0 10px 40px rgba(180, 140, 80, 0.18);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -28,7 +28,12 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-primary);
+    background:
+        radial-gradient(600px 400px at 10% 8%, rgba(232, 163, 61, 0.20), transparent 60%),
+        radial-gradient(500px 500px at 90% 18%, rgba(255, 214, 150, 0.40), transparent 60%),
+        radial-gradient(700px 500px at 50% 100%, rgba(245, 200, 130, 0.25), transparent 60%),
+        var(--bg-primary);
+    background-attachment: fixed;
     color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
@@ -63,19 +68,20 @@ body {
     background: var(--accent-hover);
     border-color: var(--accent-hover);
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
+    box-shadow: 0 10px 25px rgba(192, 86, 33, 0.35);
 }
 
 .btn-outline {
-    background: transparent;
-    color: white;
-    border-color: var(--border);
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    color: var(--text-primary);
+    border-color: rgba(43, 38, 32, 0.25);
 }
 
 .btn-outline:hover {
-    background: white;
-    color: var(--bg-primary);
-    border-color: white;
+    background: var(--text-primary);
+    color: #FFF8EC;
+    border-color: var(--text-primary);
     transform: translateY(-3px);
 }
 
@@ -104,9 +110,11 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgb(88 74 74 / 90%);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(255, 248, 236, 0.72);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 4px 24px rgba(180, 140, 80, 0.10);
     transition: var(--transition);
 }
 
@@ -120,6 +128,7 @@ body {
 .nav-logo img {
     height: 45px;
     width: auto;
+    border-radius: 50%;
 }
 
 .nav-menu {
@@ -149,7 +158,7 @@ body {
 }
 
 .nav-link:hover {
-    color: white;
+    color: var(--text-primary);
 }
 
 .nav-link:hover::after {
@@ -205,7 +214,7 @@ body {
 
 .hero-description {
     font-size: 1.05rem;
-    color: #999;
+    color: #8A7D6B;
     margin-bottom: 2.5rem;
     max-width: 550px;
 }
@@ -224,9 +233,12 @@ body {
 
 .stat-card {
     background: var(--bg-card);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
     padding: 1.8rem;
     border-radius: 20px;
     border: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(180, 140, 80, 0.14);
     transition: var(--transition);
     min-width: 220px;
 }
@@ -257,7 +269,8 @@ body {
 /* ========== ABOUT SECTION ========== */
 .about {
     padding: 6rem 0;
-    background: var(--bg-secondary);
+    background: rgba(251, 238, 211, 0.55);
+    backdrop-filter: blur(8px);
 }
 
 .about-content {
@@ -267,9 +280,12 @@ body {
 
 .card-glass {
     background: var(--bg-card);
+    backdrop-filter: blur(18px) saturate(1.3);
+    -webkit-backdrop-filter: blur(18px) saturate(1.3);
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 3rem;
+    box-shadow: 0 8px 30px rgba(180, 140, 80, 0.14);
     transition: var(--transition);
 }
 
@@ -279,7 +295,7 @@ body {
 }
 
 .about-text p {
-    color: #ccc;
+    color: #5C5347;
     margin-bottom: 1.5rem;
     font-size: 1rem;
 }
@@ -333,7 +349,10 @@ body {
 
 .skill-item {
     background: var(--bg-card);
+    backdrop-filter: blur(14px) saturate(1.3);
+    -webkit-backdrop-filter: blur(14px) saturate(1.3);
     border: 1px solid var(--border);
+    box-shadow: 0 6px 20px rgba(180, 140, 80, 0.12);
     padding: 1.2rem 2rem;
     border-radius: 50px;
     font-weight: 500;
@@ -354,7 +373,7 @@ body {
     border-color: var(--accent);
     color: white;
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(192, 86, 33, 0.30);
 }
 
 .skill-item:hover i {
@@ -364,7 +383,8 @@ body {
 /* ========== PROJECTS SECTION ========== */
 .projects {
     padding: 6rem 0;
-    background: var(--bg-secondary);
+    background: rgba(251, 238, 211, 0.55);
+    backdrop-filter: blur(8px);
 }
 
 .projects-grid {
@@ -375,17 +395,27 @@ body {
 
 .project-card {
     background: var(--bg-card);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(180, 140, 80, 0.13);
     border-radius: 20px;
     overflow: hidden;
     transition: var(--transition);
 }
+
 .project-links a {
-    background: gray;
+    background: var(--accent);
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
     color: white;
     font-size: 18px;
+    transition: var(--transition);
+}
+
+.project-links a:hover {
+    background: var(--accent-hover);
 }
 
 .project-card:hover {
@@ -463,7 +493,10 @@ body {
 
 .contact-card {
     background: var(--bg-card);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
     border: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(180, 140, 80, 0.13);
     border-radius: 20px;
     padding: 2.5rem 2rem;
     text-align: center;
@@ -494,8 +527,9 @@ body {
 
 /* ========== FOOTER ========== */
 footer {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border);
+    background: rgba(251, 238, 211, 0.6);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.65);
     padding: 2rem 0;
     text-align: center;
 }
@@ -506,7 +540,7 @@ footer p {
 }
 
 footer strong {
-    color: white;
+    color: var(--text-primary);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
